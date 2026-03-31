@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Free Consultation — Reply Within Minutes</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0f0f0f;
+    --dark: #1a1a1a;
+    --gray: #6b7280;
+    --light: #f9f9f7;
+    --white: #ffffff;
+    --border: #e5e5e0;
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+    --success: #16a34a;
+    --text: #111111;
+    --muted: #6b7280;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.02em;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .nav-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: #dcfce7;
+    color: var(--success);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Hero */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .hero-left { }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: #eff6ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin-bottom: 1.25rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  h1 .highlight {
+    color: var(--accent);
+    position: relative;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .avatars {
+    display: flex;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .avatar:first-child { margin-left: 0; }
+  .av1 { background: #7c3aed; }
+  .av2 { background: #0891b2; }
+  .av3 { background: #d97706; }
+  .av4 { background: #059669; }
+
+  .proof-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .proof-text strong { color: var(--black); font-weight: 500; }
+
+  .stars {
+    color: #f59e0b;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Features strip */
+  .features-strip {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
+
+  .feat {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .feat-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Form */
+  .form-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    animation: fadeUp 0.6s 0.15s ease both;
+  }
+
+  .form-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .form-sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .form-group {
+    margin-bottom: 0.875rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 5px;
+    letter-spacing: 0.01em;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.65rem 0.875rem;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    -webkit-appearance: none;
+  }
+
+  input::placeholder, textarea::placeholder { color: #c0bdb6; }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+  }
+
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem;
+  }
+
+  select option { background: white; color: var(--text); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.8rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .submit-btn:hover {
+    background: var(--accent-dark);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    transform: translateY(-1px);
+  }
+
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn.loading { pointer-events: none; opacity: 0.75; }
+
+  .form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0.875rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* How it works */
+  .how {
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 2rem;
+  }
+
+  .how-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .step {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.12;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .step-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .t-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .t-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .t-stars { color: #f59e0b; font-size: 13px; margin-bottom: 0.75rem; }
+
+  .t-text {
+    font-size: 0.85rem;
+    color: var(--dark);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .t-author {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--black);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .cta p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: white;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 0.72rem; color: #c0bdb6; }
+
+  /* Success */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .success-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+
+  .success-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+  }
+
+  .success-msg {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.25rem; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .t-grid { grid-template-columns: 1fr; }
+    .features-strip { flex-wrap: wrap; gap: 0.875rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Lead<span>Flow</span></div>
+  <div class="nav-badge">Replies in under 2 minutes</div>
+</nav>
+
+<section style="background:white;">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        AI-Powered Lead Follow-Up
+      </div>
+      <h1>Never Lose a Lead to <span class="highlight">Slow Follow-Up</span> Again</h1>
+      <p class="hero-desc">Every enquiry gets a personal, professional reply within 2 minutes — automatically. While you're on the job, your leads are being looked after.</p>
+
+      <div class="social-proof">
+        <div class="avatars">
+          <div class="avatar av1">JM</div>
+          <div class="avatar av2">SR</div>
+          <div class="avatar av3">TP</div>
+          <div class="avatar av4">AL</div>
+        </div>
+        <div class="proof-text">
+          <div class="stars">★★★★★</div>
+          <strong>47 businesses</strong> already using this system
+        </div>
+      </div>
+
+      <div class="features-strip">
+        <div class="feat">
+          <div class="feat-icon">
+            <svg width="9" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 4L11 1" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Instant AI reply
+        </div>
+        <div class="feat">
+          <div class="feat-icon">
+            <svg width="9" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 4L11 1" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Works 24/7
+        </div>
+        <div class="feat">
+          <div class="feat-icon">
+            <svg width="9" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 4L11 1" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          No tech skills needed
+        </div>
+        <div class="feat">
+          <div class="feat-icon">
+            <svg width="9" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 4L11 1" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Setup in 24hrs
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="form-wrap">
+        <div class="form-header">
+          <div class="form-title">Get a Free Demo</div>
+          <div class="form-sub">See exactly how it works for your business — no obligation.</div>
+        </div>
+
+        <form id="leadForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First name</label>
+              <input type="text" name="firstName" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label>Last name</label>
+              <input type="text" name="lastName" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" name="email" placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="tel" name="phone" placeholder="+61 400 000 000">
+          </div>
+
+          <div class="form-group">
+            <label>What type of business do you run?</label>
+            <select name="businessType" required>
+              <option value="" disabled selected>Select your industry</option>
+              <option>Real estate</option>
+              <option>Trades (tiling, plumbing, electrical)</option>
+              <option>Salon / beauty</option>
+              <option>Coaching / consulting</option>
+              <option>Fitness / gym</option>
+              <option>Retail / e-commerce</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>How many leads do you get per month?</label>
+            <select name="leads">
+              <option value="" disabled selected>Roughly how many?</option>
+              <option>1–10</option>
+              <option>10–30</option>
+              <option>30–50</option>
+              <option>50+</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Book My Free Demo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="form-footer">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            No spam. No obligation. Unsubscribe anytime.
+          </div>
+        </form>
+
+        <div class="success-state" id="successState">
+          <div class="success-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div class="success-title">You're booked in!</div>
+          <p class="success-msg">Check your email — a confirmation is on its way. We'll be in touch within the next 2 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-inner">
+    <div class="section-label">How it works</div>
+    <div class="section-title">Three steps. Fully automatic.</div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Lead enquires</div>
+        <p class="step-desc">Someone fills in your form, sends a DM, or submits an enquiry from any source.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">AI writes a personal reply</div>
+        <p class="step-desc">Within 2 minutes, the system sends a warm, professional email written specifically for that lead.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">You see it all in one place</div>
+        <p class="step-desc">Every lead, every status, every follow-up logged automatically. You just check the dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-label">What clients say</div>
+  <div class="section-title">Real results from real businesses</div>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"I used to lose jobs just because I couldn't reply fast enough while on site. Now every lead gets a reply within minutes and I've already picked up 3 extra jobs this month."</p>
+      <div class="t-author">— Marcus T., Tiler — Sydney</div>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The system paid for itself in the first week. A lead came in at 10pm on a Friday — got an instant reply, booked a call Monday morning. Never would have happened before."</p>
+      <div class="t-author">— Sarah K., Real Estate Agent — Melbourne</div>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Setup was done in 24 hours and I haven't had to think about it since. My response rate went from 40% to basically 100% overnight."</p>
+      <div class="t-author">— David R., Business Coach — Brisbane</div>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"I was sceptical but the demo sold me instantly. Watched a lead come in and get a personal email sent in under 30 seconds. Signed up on the spot."</p>
+      <div class="t-author">— Priya M., Salon Owner — Perth</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to stop losing leads?</h2>
+  <p>See the system working live in a free 15-minute demo. No tech knowledge needed.</p>
+  <a href="#" class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Book a Free Demo</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Lead<span>Flow</span></div>
+  <div class="footer-copy">© 2026 LeadFlow. All rights reserved.</div>
+</footer>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.classList.add('loading');
+
+  setTimeout(function() {
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('successState').style.display = 'block';
+  }, 1000);
+});
+</script>
+</body>
+</html>
